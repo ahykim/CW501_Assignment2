@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity{
         Log.e(MyFlag, "onCreate was just called.");
 
         //imgPerson.setImageDrawable();
-        imgPerson = (ImageView) findViewById(R.id.imgMonkey);
+        imgPerson = (ImageView) findViewById(R.id.imgMath);
 
         //edtOp1 = new EditText(this);  INCORRECT, must find the reference that AS is holding.
 
@@ -68,14 +68,27 @@ public class MainActivity extends AppCompatActivity{
                         case "Multiplication":
                             Answer = Op1 * Op2; break;
                         case "Division":
-                            Answer = Op1 / Op2; break;
+                            if (Op2 == 0) {
+                                txtAnswer.setText("You cannot divide by zero!");
+                                break;
+                            }
+                            else {
+                                Answer = Op1 / Op2;
+                                break;
+                            }
                         case "Modulus":
-                            Answer = Op1 % Op2; break;
+                            if (Op2 == 0) {
+                                txtAnswer.setText("You cannot divide by zero!");
+                                break;
+                            }
+                            else {
+                                Answer = Op1 % Op2;
+                                break;
+                            }
                     }
-
                     txtAnswer.setText(Answer.toString());
                 } catch (Exception e) {
-                    txtAnswer.setText("ERROR");
+                    txtAnswer.setText("ERROR: You cannot use a non-double!");
                     Log.e(MyFlag, e.toString());
                 }
             }
