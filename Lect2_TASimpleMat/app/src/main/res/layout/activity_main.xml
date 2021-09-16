@@ -11,13 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
-        android:layout_marginEnd="76dp"
+        android:layout_marginEnd="50dp"
         android:text="Calculate"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtAnswer"
-        app:layout_constraintHorizontal_bias="0.885"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edtOp1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtOp1"
         app:layout_constraintTop_toBottomOf="@+id/edtOp2"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -25,7 +24,7 @@
         android:id="@+id/edtOp1"
         android:layout_width="125dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="51dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/edtOp2"
@@ -44,9 +43,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edtOp1"
         app:layout_constraintHorizontal_bias="0.22"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/edtOp1" />
 
     <TextView
         android:id="@+id/txtAnswer"
@@ -55,9 +54,9 @@
         android:layout_marginTop="128dp"
         android:text="answer here..."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.817"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -67,9 +66,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="71dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edtOp1"
         app:layout_constraintHorizontal_bias="0.329"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edtOp1"
         app:layout_constraintTop_toBottomOf="@+id/btnCalculate"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/happy_monkey"
