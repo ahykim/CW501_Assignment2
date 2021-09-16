@@ -48,14 +48,31 @@ public class MainActivity extends AppCompatActivity{
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
+
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             Double Op1, Op2, Answer;
+
             @Override
             public void onClick(View view) {
+                // Get selected item from spinner
+                String value = spinner.getSelectedItem().toString();
+
                 try {
                     Op1 = Double.parseDouble(edtOp1.getText().toString());
                     Op2 = Double.parseDouble(edtOp2.getText().toString());
-                    Answer = Op1 + Op2;
+                    switch (value){
+                        case "Addition":
+                            Answer = Op1 + Op2; break;
+                        case "Subtraction":
+                            Answer = Op1 - Op2; break;
+                        case "Multiplication":
+                            Answer = Op1 * Op2; break;
+                        case "Division":
+                            Answer = Op1 / Op2; break;
+                        case "Modulus":
+                            Answer = Op1 % Op2; break;
+                    }
+
                     txtAnswer.setText(Answer.toString());
                 } catch (Exception e) {
                     txtAnswer.setText("ERROR");
