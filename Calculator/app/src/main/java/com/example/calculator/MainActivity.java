@@ -40,92 +40,84 @@ public class MainActivity extends AppCompatActivity {
         btnSqrt = (Button) findViewById(R.id.btnSqrt);
         btnEq = (Button) findViewById(R.id.btnEq);
         edtOp1 = (EditText) findViewById(R.id.edtOp1);
-        edtOp1.setText(edtOp1.getText() + "0");
 
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (edtOp1.getText().toString() == "0" ){
-                    edtOp1.setText("1");
-                }
-                edtOp1.setText(edtOp1.getText() + "1");
+                clickChecker("1");
             }
         });
 
-        //comment to test commit
 
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edtOp1.setText(edtOp1.getText() + "2");
+                clickChecker("2");
             }
         });
 
         btnThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edtOp1.setText(edtOp1.getText() + "3");
+                clickChecker("3");
             }
         });
 
         btnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edtOp1.setText(edtOp1.getText() + "4");
+                clickChecker("4");
             }
         });
 
         btnFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edtOp1.setText(edtOp1.getText() + "5");
+                clickChecker("5");
             }
         });
 
         btnSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edtOp1.setText(edtOp1.getText() + "6");
+                clickChecker("6");
             }
         });
 
         btnSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edtOp1.setText(edtOp1.getText() + "7");
+                clickChecker("7");
             }
         });
 
         btnEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edtOp1.setText(edtOp1.getText() + "8");
+                clickChecker("8");;
             }
         });
 
         btnNine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edtOp1.setText(edtOp1.getText() + "9");
+                clickChecker("9");;
             }
         });
 
         btnZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edtOp1.setText(edtOp1.getText() + "0");
+                clickChecker("0");
             }
         });
+    }
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Value1 = Float.parseFloat(edtOp1.getText() + "");
-                Addition = true;
-                ed
-            }
-        });
-
-
+    public void clickChecker(String num){
+        if (edtOp1.getText().toString().equals("0")){
+            edtOp1.setText(num);
+        } else {
+            edtOp1.setText(edtOp1.getText() + num);
+        }
     }
 }
