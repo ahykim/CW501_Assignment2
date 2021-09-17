@@ -1,4 +1,4 @@
-# CS501_Assignment2
+# CS501_Assignment2 Andy Vo, Chris Jung, Ashley Kim, Anastasia Sviridenko
 
 ### Projects
 
