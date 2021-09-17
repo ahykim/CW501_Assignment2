@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edtOp1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="42dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/txtPW1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPW2" />
+
+    <Button
+        android:id="@+id/btnCompare"
+        android:layout_width="237dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        android:text="Compare"
+        app:layout_constraintBottom_toTopOf="@+id/txtResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtOp2" />
+
+    <EditText
+        android:id="@+id/edtOp2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="80dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/btnCompare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPW1" />
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="354dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="161dp"
+        android:text="Results will be shown here:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCompare" />
+
+    <TextView
+        android:id="@+id/txtPW1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:background="@color/purple_200"
+        android:text="Enter first password below:"
+        app:layout_constraintBottom_toTopOf="@+id/edtOp2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtOp1" />
+
+    <TextView
+        android:id="@+id/txtPW2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="55dp"
+        android:background="@color/purple_200"
+        android:text="Enter second password below:"
+        app:layout_constraintBottom_toTopOf="@+id/edtOp1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
