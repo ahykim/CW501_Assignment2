@@ -13,9 +13,9 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText edtOp1;
 
-    private float Value1, Value2;
+    private float Value1;
 
-    boolean Addition, Subtract, Multiplication, Division, Square;
+    boolean Addition, Subtract, Multiplication, Division;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         btnEq = (Button) findViewById(R.id.btnEq);
         edtOp1 = (EditText) findViewById(R.id.edtOp1);
 
+        /*
+        Number One Button
+         */
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        /*
+        Number Two Button
+         */
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Number Three Button
+         */
         btnThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Number Four Button
+         */
         btnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Number Five Button
+         */
         btnFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Number Six Button
+         */
         btnSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Number Seven Button
+         */
         btnSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Number Eight Button
+         */
         btnEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Number Nine Button
+         */
         btnNine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,19 +131,144 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Zero Button
+         */
         btnZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 clickChecker("0");
             }
         });
+
+        /*
+        Addition Button
+         */
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateOperation("ADD");
+            }
+        });
+
+        /*
+        Subtraction Button
+         */
+        btnSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateOperation("SUB");
+            }
+        });
+
+        /*
+        Multiplication Button
+         */
+        btnMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateOperation("MUL");
+            }
+        });
+
+        /*
+        Division Button
+         */
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateOperation("DIV");
+            }
+        });
+
+        /*
+        Equal button that delivers the final result
+         */
+        btnEq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float Value2 = Float.parseFloat(edtOp1.getText().toString());
+                if(Addition == true){
+                    edtOp1.setText(String.valueOf(Value1 + Value2));
+                    Addition = false;
+                } else if (Subtract == true){
+                    edtOp1.setText(String.valueOf(Value1 - Value2));
+                    Subtract = false;
+                } else if (Multiplication == true){
+                    edtOp1.setText(String.valueOf(Value1 * Value2));
+                    Multiplication = false;
+                } else if (Division == true){
+                    if(Value2 == 0){
+                        edtOp1.setText("ERROR");
+                    } else {
+                        edtOp1.setText(String.valueOf(Value1 / Value2));
+                    }
+                    Multiplication = false;
+                }
+            }
+        });
+
+        /*
+        button that adds a decimal at the end of the number if there is not one already
+         */
+        btnDec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!edtOp1.getText().toString().contains(".")){
+                    edtOp1.setText(edtOp1.getText() + ".");
+                }
+            }
+        });
+
+        /*
+        button that squares the current number
+         */
+        btnSqrt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float value = Float.parseFloat(edtOp1.getText().toString());
+                edtOp1.setText(String.valueOf(value * value));
+            }
+        });
     }
 
+    /*
+    Helper function to help the number buttons update the editText Box
+     */
     public void clickChecker(String num){
-        if (edtOp1.getText().toString().equals("0")){
+        if (edtOp1.getText().toString().equals("0") || edtOp1.getText().toString().equals("ERROR")){
             edtOp1.setText(num);
         } else {
             edtOp1.setText(edtOp1.getText() + num);
+        }
+    }
+
+    /*
+    Helper to update the app when user clicks on one of the four operations
+     */
+    public void updateOperation(String operation){
+        Value1 = Float.parseFloat(edtOp1.getText().toString());
+        edtOp1.setText("0");
+        if(operation == "ADD"){
+            Addition = true;
+            Subtract = false;
+            Multiplication = false;
+            Division = false;
+        } else if (operation == "SUB"){
+            Addition = false;
+            Subtract = true;
+            Multiplication = false;
+            Division = false;
+        } else if (operation == "MUL"){
+            Addition = false;
+            Subtract = false;
+            Multiplication = true;
+            Division = false;
+        } else if (operation == "DIV"){
+            Addition = false;
+            Subtract = false;
+            Multiplication = false;
+            Division = true;
         }
     }
 }
