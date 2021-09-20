@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="59dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Hit Me For Hello"
+        android:text="Check Your Email"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="#2196F3"
