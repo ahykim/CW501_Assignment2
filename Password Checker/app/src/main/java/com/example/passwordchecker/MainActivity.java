@@ -13,9 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCompare;
     private EditText edtOp1;
     private EditText edtOp2;
-    private TextView txtResult;
-    private TextView txtPW1;
-    private TextView txtPW2;
+    private TextView txtPW;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +23,15 @@ public class MainActivity extends AppCompatActivity {
         edtOp1 = (EditText) findViewById(R.id.edtOp1);
         edtOp2 = (EditText) findViewById(R.id.edtOp2);
         btnCompare = (Button) findViewById(R.id.btnCompare);
-        txtResult = (TextView) findViewById(R.id.txtResult);
-        txtPW1 = (TextView) findViewById(R.id.txtPW1);
-        txtPW2 = (TextView) findViewById(R.id.txtPW2);
+        txtPW = (TextView) findViewById(R.id.txtPW);
 
         btnCompare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(edtOp1.getText().toString().equals(edtOp2.getText().toString())){
-                    txtResult.setText("THANK YOU!!!");
+                    txtPW.setText("THANK YOU");
                 } else {
-                    txtResult.setText("PASSWORDS MUST MATCH!!");
+                    txtPW.setText("PASSWORDS MUST MATCH");
                 }
             }
         });
