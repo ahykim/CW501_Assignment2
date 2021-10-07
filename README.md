@@ -1,6 +1,6 @@
 # CS501_Assignment2 Andy Vo, Chris Jung, Ashley Kim, Anastasia Sviridenko
 
-### Projects
+### Projects (Android Studio)
 
 ## Simple Arithmetic Android App
 
